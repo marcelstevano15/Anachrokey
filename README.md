@@ -59,7 +59,16 @@ Fixed-size windows (Run dialog, About boxes, message boxes, Winver, and similar)
 - The Quick Link menu (`Win+X`) is a plain right-click style menu, since XP doesn't have a Win8-style overlay to hook into.
 - Multi-monitor window throwing only makes sense if you're actually running more than one monitor — on a single display it just does nothing, silently.
 
-### This software is under active development to fix bugs, add features, fix stability, fix memory leaks, fix performance, so always download to the latest version of Anachrokey if available, then replace the old version with the new one.
+### This software is under active development to fix bugs, add features, improve stability, fix memory leaks, and improve performance. Always check for and download the latest version of Anachrokey when one is available.
+
+**To update to a new version:**
+
+1. If Anachrokey is currently running, end the process first — right-click the taskbar, open **Task Manager**, find `Anachrokey.exe` under the Processes tab, and click **End Process** (or End Task). The script has to stop running before you touch its file, otherwise Windows will block you from overwriting or deleting it.
+2. Download the new `Anachrokey.exe` from the [Releases page](https://github.com/marcelstevano15/Anachrokey/releases).
+3. Go to your Startup folder — press <kbd>⊞ Win</kbd> + <kbd>R</kbd>, type `shell:common startup`, then delete the old `Anachrokey.exe` sitting there.
+4. Copy the new Anachrokey release into that same Startup folder.
+5. Run the new exe once manually, or just restart your PC — either way, the updated version takes over from here on.
+
 ---
 
 
@@ -100,9 +109,8 @@ If you're building from the `.ahk` source instead of using the prebuilt exe, you
 
 1. Copy the Anachrokey.exe
 2. Type: <kbd>⊞ Win</kbd> + <kbd>R</kbd>
-3. Type: `shell:Common Start Menu`
-4. Go to: `Programs\Startup`
-5. Paste the script to that folder 
+3. Type: `shell:common startup`
+5. Paste the `Anachrokey.exe` to that folder 
 
 Now the script is automatically active at startup 
 
