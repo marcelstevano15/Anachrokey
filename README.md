@@ -10,6 +10,20 @@ This project is still actively being developed. Most of the shortcuts below are 
 
 ---
 
+## Table of Contents
+
+- [What it does](#what-it-does)
+- [Important Limitations for Initial Release (v1.0.0)](#important-limitations-for-initial-release-v100)
+- [Requirements](#requirements)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [How to activate automatically at startup](#how-to-activate-automatically-at-startup-no-need-to-click-manually-anymore)
+- [Why AutoHotkey 1.1 and not v2](#why-autohotkey-11-and-not-v2)
+- [Credits](#credits)
+- [License](#license)
+
+---
+
 ## What it does
 
 | Shortcut | Behavior |
@@ -38,7 +52,14 @@ Fixed-size windows (Run dialog, About boxes, message boxes, Winver, and similar)
 - Win+Left/Right/Up/Down window snapping may not respond in full-screen exclusive-mode applications and games that capture the Windows key.
 - Win+V clipboard history tracks plain text only — copied images and files are not recorded.
 - Win+B requires the default Windows Explorer shell (relies on the standard tray notification window class) and may not work under third-party shell replacements.
+- `Win+V` and `Win+Shift+S` are still under active development — functional, but not yet as thoroughly tested across different XP configurations as the rest of the shortcuts. If something behaves oddly, it's most likely one of these two.
+- The clipboard history only tracks plain text. Copied images and files aren't captured — this was a deliberate choice to keep it simple and avoid bloating memory with binary clipboard data.
+- Window snapping is left/right halves only, no quarter-tiling like Windows 11's snap layouts. XP's window management model doesn't really lend itself to more than that without a lot of extra tracking code.
+- "Peek Desktop" is a real minimize-and-restore, not the live transparent preview XP obviously can't render. It gets you the same result — see the desktop, get your windows back — just without the eye candy.
+- The Quick Link menu (`Win+X`) is a plain right-click style menu, since XP doesn't have a Win8-style overlay to hook into.
+- Multi-monitor window throwing only makes sense if you're actually running more than one monitor — on a single display it just does nothing, silently.
 
+### This software is under active development to fix bugs, add features, fix stability, fix memory leaks, fix performance, so always download to the latest version of Anachrokey if available, then replace the old version with the new one.
 ---
 
 
@@ -84,17 +105,6 @@ If you're building from the `.ahk` source instead of using the prebuilt exe, you
 5. Paste the script to that folder 
 
 Now the script is automatically active at startup 
-
----
-
-## Known limitations on initial release 
-
-- `Win+V` and `Win+Shift+S` are still under active development — functional, but not yet as thoroughly tested across different XP configurations as the rest of the shortcuts. If something behaves oddly, it's most likely one of these two.
-- The clipboard history only tracks plain text. Copied images and files aren't captured — this was a deliberate choice to keep it simple and avoid bloating memory with binary clipboard data.
-- Window snapping is left/right halves only, no quarter-tiling like Windows 11's snap layouts. XP's window management model doesn't really lend itself to more than that without a lot of extra tracking code.
-- "Peek Desktop" is a real minimize-and-restore, not the live transparent preview XP obviously can't render. It gets you the same result — see the desktop, get your windows back — just without the eye candy.
-- The Quick Link menu (`Win+X`) is a plain right-click style menu, since XP doesn't have a Win8-style overlay to hook into.
-- Multi-monitor window throwing only makes sense if you're actually running more than one monitor — on a single display it just does nothing, silently.
 
 ---
 
