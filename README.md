@@ -20,7 +20,7 @@ This project is still actively being developed. Most of the shortcuts below are 
 | `Win+Left` | Snap window to the left half of the screen (press again to undo) |
 | `Win+Right` | Snap window to the right half of the screen (press again to undo) |
 | `Win+Home` | Minimize every window except the one you're currently using |
-| `Win+B` | Jump focus to the system tray |
+| `Win+B` (Currently is not work on initial release, still under development) | Jump focus to the system tray |
 | `Win+PrintScreen` | Full-screen screenshot, saved automatically to `Pictures\Screenshots` as PNG|
 | `Win+Shift+S` *(experimental)* | Drag-select a region of the screen and save it as an image (Snipping Tool style, dimmed overlay included) |
 | `Win+X` | Quick Link menu — Control Panel, Device Manager, Task Manager, Services, Regedit, and the rest of the usual admin shortcuts, right from the keyboard |
@@ -31,6 +31,16 @@ This project is still actively being developed. Most of the shortcuts below are 
 Fixed-size windows (Run dialog, About boxes, message boxes, Winver, and similar) are deliberately excluded from the maximize/restore/snap hotkeys — trying to maximize a dialog box that was never meant to resize just looks broken, so the script checks the window style first and backs off if it's not resizable.
 
 ---
+
+## Important Limitations for Initial Release (v1.0.0)
+- **Language dependency:** Ctrl+Shift+N's "New Folder" action outside the Desktop relies on English-language Explorer menu access keys (File → New → Folder). This will not work correctly on non-English Windows XP installations.
+- **Hotkey conflict:** Ctrl+Shift+N is a system-wide hotkey and will intercept the same shortcut in other applications — most notably browsers (Chrome/Firefox use Ctrl+Shift+N for Incognito/Private Window). Disable this hotkey in the script if you rely on that shortcut elsewhere.
+- Win+Left/Right/Up/Down window snapping may not respond in full-screen exclusive-mode applications and games that capture the Windows key.
+- Win+V clipboard history tracks plain text only — copied images and files are not recorded.
+- Win+B requires the default Windows Explorer shell (relies on the standard tray notification window class) and may not work under third-party shell replacements.
+
+---
+
 
 ## Requirements
 
